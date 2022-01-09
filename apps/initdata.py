@@ -54,7 +54,7 @@ class InitStockInfo():
         print('finish')
         return twse_codes.append(tpex_codes)
 
-    def get_marketvalue_list(self):
+    def get_marketcaps(self):
         url = 'https://stock.capital.com.tw/z/zm/zmd/zmdb.djhtm'
         req = requests.get(url)
         soup = BeautifulSoup(req.text, 'html.parser')
@@ -166,7 +166,7 @@ class GetContracts():
         mer = pd.merge(dff, code_categorys, how="left", on=["code"])
         return mer.to_dict('records')
 
-    def clean_marketvalue_top(self, stocks):
+    def clean_marketcap_top(self, stocks):
         df = stocks.set_index('code').loc[mvlist].reset_index().copy()
         df['change_info'] = df['change_type'] +','+df['change_rate'].apply(str)
         dff = df[['code','exchange','close','change_info','change_rate','volume_ratio','total_amount']].copy()
