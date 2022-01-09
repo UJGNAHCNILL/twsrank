@@ -34,7 +34,7 @@ def monitor():
         'long_stocks':contracts.long_stocks, 
         'short_stocks':contracts.short_stocks,
         'amount_top20':contracts.amount_top20,
-        'marketvalue_top':contracts.marketvalue_top,
+        'marketcap_top':contracts.marketcap_top,
         
     }
     
@@ -55,7 +55,7 @@ def startmonitor():
         'long_stocks':contracts.long_stocks, 
         'short_stocks':contracts.short_stocks,
         'amount_top20':contracts.amount_top20,
-        'marketvalue_top':contracts.marketvalue_top,
+        'marketcap_top':contracts.marketcap_top,
 
     }
     return data
